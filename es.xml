@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/5.4/language.xsd" languagecode="es" languagename="Español" countrycode="es">
+<import>
+	<category name="blog.entry">
+		<item name="blog.entry.button.jumpToEntryThread"><![CDATA[Tema de discusión]]></item>
+		<item name="blog.entry.entryThread.info"><![CDATA[{#$entryThread->replies} {if $entryThread->replies == 1}respuesta{else}respuestas{/if}{if $entryThread->replies > 0}, última: {time time=$entryThread->lastPostTime}{/if}]]></item>
+		<item name="blog.entry.entryThread.subject"><![CDATA[{@$entry->subject}]]></item>
+		<item name="blog.entry.entryThread.message"><![CDATA[<p>{$entry->username} ha escrito un nuevo artículo del blog: <a href="{$entry->getLink()}">{$entry->getTitle()}</a>.</p>
+<woltlab-quote>{@$entry->getFormattedExcerpt()}</woltlab-quote>]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.blog.entryThread"><![CDATA[Tema de discusión]]></item>
+		<item name="wcf.acp.option.blog_entry_thread_board_id"><![CDATA[Foro]]></item>
+		<item name="wcf.acp.option.blog_entry_thread_board_id.description"><![CDATA[Los temas de discusión se crean automáticamente en el foro seleccionado. Si no se selecciona ningún foro, no se creará ningún tema de discusión.]]></item>
+	</category>
+</import>
+</language>
