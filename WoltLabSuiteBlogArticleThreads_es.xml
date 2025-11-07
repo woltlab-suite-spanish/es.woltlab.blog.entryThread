@@ -4,9 +4,9 @@
 	<category name="blog.entry">
 		<item name="blog.entry.button.jumpToEntryThread"><![CDATA[Tema de discusión]]></item>
 		<item name="blog.entry.entryThread.info"><![CDATA[{#$entryThread->replies} {if $entryThread->replies == 1}respuesta{else}respuestas{/if}{if $entryThread->replies > 0}, última: {time time=$entryThread->lastPostTime}{/if}]]></item>
-		<item name="blog.entry.entryThread.subject"><![CDATA[{@$entry->subject}]]></item>
-		<item name="blog.entry.entryThread.message"><![CDATA[<p>{$entry->username} ha escrito un nuevo artículo del blog: <a href="{$entry->getLink()}">{$entry->getTitle()}</a>.</p>
-<woltlab-quote>{@$entry->getFormattedExcerpt()}</woltlab-quote>]]></item>
+		<item name="blog.entry.entryThread.subject"><![CDATA[{unsafe:$entry->subject}]]></item>
+		<item name="blog.entry.entryThread.message"><![CDATA[<p>{$entry->username} ha escrito un nuevo artículo del blog:<br>[blogentry]{$entry->entryID}[/blogentry]</p>
+<woltlab-quote>{unsafe:$entry->getFormattedExcerpt()}</woltlab-quote>]]></item>
 	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.blog.entryThread"><![CDATA[Tema de discusión]]></item>
